@@ -7,73 +7,91 @@ class Form2 extends Component {
   }
 
   render() {
-    return (
-      <div>
-        <hr />
-        <ul>
+    return (<>
+    <hr></hr>
+      <h2>Section 2</h2>
+      <ol>
+        
+        <li>
+          <p>Can you hold your breath underwater longer than 1 minute ? </p>
+          <input id="" name="" type="radio" checked="" onChange="" />
+          <label> Yes </label>
+          <input id="" name="" type="radio" checked="" onChange="" />
+          <label> No </label>
+        </li>
+        
+        <li>
+          <p>What is your marital status?</p>
+          <input type="radio" name="" checked="" onChange="" />
+          <label> Married </label>
+          <input type="radio" name="" checked="" onChange="" />
+          <label> Unmarried </label>
+        </li>
+
+        <li>
+          <p>When you are in a stressful or difficult situation, how do you most
+            frequently react?</p>
+            <ul>
+              <li><input type="radio" name="" checked="" onChange="" />
+                <label> Defeat: I stop confronting the situation.</label></li>
+              
+              <li><input type="radio" name="" checked="" onChange="" />
+                <label> Anger: I become upset at the situation.</label></li>
+         
+              <li><input type="radio" name="" checked="" onChange="" />
+              <label> Resourcefulness: I seek help to confront the situation.</label></li>
+
+              <li><input type="radio" name="" checked="" onChange="" />
+                <label> Determination: I continue to confront the situation.</label></li>
+            </ul>
+        </li>
+        
+        <li>
+          <p> Are you claustrophobic? </p>
+          <label><input type="radio" name="" checked="" onChange="" /> Yes </label>
+          <label><input type="radio" name="" checked="" onChange="" /> No </label>
+          <label><input type="radio" name="" checked="" onChange="" /> I don't know</label>
+        </li>
+
+        <li>
+          <p> Does your family have a history of (check all that apply): </p>
+            <label> Cancer <input type="checkbox" name="" checked="" onChange=""/></label>
+            <label> Heart Disease <input type="checkbox" name="" checked="" onChange="" /></label>
+            <label> Diabetes <input type="checkbox" name="" checked="" onChange="" /></label>
+        </li>
+
+        <li>
+          <p>Do you have any... (check all that apply): </p>
+            <label> Siblings? <input type="checkbox" name="" checked="" onChange="" /></label>
+            <label> Parents? <input type="checkbox" name="" checked="" onChange="" /></label>
+            <label> Grandparents? <input type="checkbox" name="" checked="" onChange="" /></label>
+        </li>
+
+        <li>
+          <p>Check all educational credentials you have received:</p>
           <ul>
-            <li>Can you breathe underwater longer than 1 minute?</li>
+            <li><input type="checkbox" name="" checked="" onChange="" /> High school diploma or GED equivalent </li>
+
+            <li><input type="checkbox" name="" checked="" onChange="" /> Associate's Degree </li>
+
+            <li><input type="checkbox" name="" checked="" onChange="" /> Bachelor's Degree </li>
+
+            <li><input type="checkbox" name="" checked="" onChange="" /> Master's Degree </li>
+
+            <li><input type="checkbox" name="" checked="" onChange="" /> PhD 
+            </li>
+
           </ul>
-          <li>
-            Yes
-            <input id="" name="" type="radio" checked="" onChange="" />
-          </li>
-          <li>
-            No
-            <input id="" name="" type="radio" checked="" onChange="" />
-          </li>
-          <ul> What is your marital status? </ul>
-          <input type="radio" name="" checked="" onChange="" />
-          Married
-          <input type="radio" name="" checked="" onChange="" />
-          Unmarried
-          <ul>
-            When you are in a stressful or difficult situation, how do you most
-            frequently react?
-          </ul>
-          <input type="radio" name="" checked="" onChange="" />
-          Defeat: I stop confronting the situation.
-          <input type="radio" name="" checked="" onChange="" />
-          Anger: I become upset at the situation.
-          <input type="radio" name="" checked="" onChange="" />
-          Resourcefulness: I seek help to confront the situation.
-          <input type="radio" name="" checked="" onChange="" />
-          Determination: I continue to confront the situation.
-          <ul> Are you claustrophobic? </ul>
-          <input type="radio" name="" checked="" onChange="" />
-          Yes
-          <input type="radio" name="" checked="" onChange="" />
-          No
-          <input type="radio" name="" checked="" onChange="" />
-          IDK.
-          <ul>Does your family have a history of (check all that apply):</ul>
-          Cancer
-          <input type="checkbox" name="" checked="" onChange="" />
-          Heart Disease
-          <input type="checkbox" name="" checked="" onChange="" />
-          Diabetes
-          <input type="checkbox" name="" checked="" onChange="" />
-          <ul>Do you have any ulving (check all that apply):</ul>
-          Sibulngs?
-          <input type="checkbox" name="" checked="" onChange="" />
-          Parents?
-          <input type="checkbox" name="" checked="" onChange="" />
-          Grandparents?
-          <input type="checkbox" name="" checked="" onChange="" />
-          <ul>Check all educational credentials you have received:</ul>
-          High school diploma or GED equivalent
-          <input type="checkbox" name="" checked="" onChange="" />
-          Associate's Degree
-          <input type="checkbox" name="" checked="" onChange="" />
-          Bachelor's Degree
-          <input type="checkbox" name="" checked="" onChange="" />
-          Master's Degree
-          <input type="checkbox" name="" checked="" onChange="" />
-          PhD
-          <input type="checkbox" name="" checked="" onChange="" />
-          Other:
-        </ul>
-      </div>
+          
+        <li>
+          <p>Why do you want to go to Mars?</p>
+          <textarea></textarea>
+          
+        </li>
+        
+        </li>
+      </ol>
+      </>
     );
   }
 }

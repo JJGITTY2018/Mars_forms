@@ -1,72 +1,86 @@
 import React, { Component } from "react";
-import Countries from "../country.js";
+import Countries from "./country"
+import Form2 from "./mars_form_2"
 
 class Forms extends Component {
   constructor() {
     super();
+    this.state = {
+      name: "",
+      birthday: "",
+      country: "",
+      diet: "",
+      complete: false,
+    }
   }
-  createOption = props => {
-    // let select = [];
+  createOption = () => {
     let options = [];
     for (let i = 0; i < Countries.length; i++) {
       options.push(<option key={i}>{Countries[i].name}</option>);
     }
-
-    // select.push(
-    //   <select name="country" value="USA">
-    //     {options}
-    //   </select>
-    // );
-    // console.log(Countries[1].code); // First Country
-    // console.log(options)
     return options;
   };
 
-  clickSubmit() {
-    console.log("AAA");
+  clickSubmit = (event) => {
+    event.preventDefault();
+    this.setState({
+      complete: true
+    })
+    console.log(this.state)
   }
 
-  handleChange(event) {
-    console.log("BBB");
+  handleChange = (event) => {
+    this.setState({
+      [event.target.name] : event.target.value
+    })
+  }
+
+  nextSection = () => {
+    if(this.state.complete){
+      return <Form2 />
+    }
   }
 
   render() {
     return (
       <div>
-        <form onClick={this.clickSubmit}>
-          <h1> Sign Up for Your Mars Trip!</h1>
+        <h1>Mars Trip</h1>
+        <form onChange={this.handleChange}>
+          <h2> Section 1 </h2>
           <label htmlFor="name">Full Name: </label>
           <input
-            onChange={this.handleChange}
-            placeholder="Full Name"
+            placeholder="First Name Last Name"
             name="name"
+            defaultValue = {
+              this.state.name
+            }
           />
           <br />
           <label htmlFor="birthday">Birthday: </label>
           <input
-            onChange={this.handleChange}
             type="date"
             name="birthday"
-            defaultValue="01/24/1989"
+            defaultValue = {this.state.birthday}
           />
           <br />
-          <label htmlFor="birthPlace">Country Of Origin: </label>
-          <select name="country">{this.createOption()}</select>
+          <label htmlFor="country">Country Of Origin: </label>
+          <select name="country" defaultValue={this.state.country} >
+          <option disabled value = {this.state.country}></option>
+          {this.createOption()}</select>
           <br />
           <label htmlFor="diet">Diet: </label>
-          <select name="diet">
+          <select name = "diet" defaultValue = {this.state.diet}>
+            <option disabled value={this.state.diet}></option>
             <option>Omnivore</option>
             <option>Vegetarian</option>
             <option>Vegan</option>
           </select>
-          <p>Why do you want to go to Mars? </p>
-          <input
-            onChange={this.handleChange}
-            name="narrative"
-            placeholder="Because I want to be alone from people"
-          />
-          <br />
+          <br></br>
+          <button onClick={this.clickSubmit}>Next Section></button>
+          <br /> 
         </form>
+
+        {this.nextSection()}
       </div>
     );
   }
