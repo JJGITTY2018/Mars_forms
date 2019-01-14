@@ -37,16 +37,17 @@ class Forms extends Component {
 
   nextSection = () => {
     if(this.state.complete){
-      return <Form2 />
+      return <Form2 handleChange = {this.handleChange} data = {this.state}/>
     }
   }
 
   render() {
     return (
-      <div>
+      <>
+      <div className= "container">
         <h1>Mars Trip</h1>
-        <form onChange={this.handleChange}>
           <h2> Section 1 </h2>
+        <form onChange={this.handleChange}>
           <label htmlFor="name">Full Name: </label>
           <input
             placeholder="First Name Last Name"
@@ -79,9 +80,9 @@ class Forms extends Component {
           <button onClick={this.clickSubmit}>Next Section></button>
           <br /> 
         </form>
-
         {this.nextSection()}
       </div>
+      </>
     );
   }
 }

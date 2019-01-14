@@ -1,0 +1,44 @@
+*{
+    font-family: 'Space Mono',
+    monospace;
+    border-radius: 4px;
+  }
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-column-start: 2;
+}
+
+form{
+  grid-column-start: 2;
+  background-color: rgb(133, 133, 133, .5)
+}
+
+h2{
+  color: red;
+  grid-column-start: 2;
+}
+
+h1{
+  align-self: center;
+  justify-self: center;
+  grid-column-start: 2;
+}
+
+ol{
+  grid-column-start: 2;
+  background-color: rgb(133, 133, 133, .5)
+}
+
+button{
+  grid-column-start: 2;
+}
+
+hr{
+  grid-column-start: 2;
+}
+body{
+  background-image: url("https://pixelz.cc/wp-content/uploads/2017/12/surviving-mars-uhd-8k-wallpaper.jpg");
+  background-size: cover
+}
